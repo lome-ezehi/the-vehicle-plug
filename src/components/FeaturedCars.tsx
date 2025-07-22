@@ -1,4 +1,5 @@
 import { ChevronRight, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const featuredCars = [
     {
@@ -104,9 +105,9 @@ export default function FeaturedCars() {
             </div>
 
             <div className="text-center mt-12">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors duration-200">
+            <Link to={'/inventory'} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200">
                 View All Inventory
-            </button>
+            </Link>
             </div>
         </div>
         </section>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { db } from "./firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import Home from "./pages/index"
+import Inventory from "./pages/inventory"
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/inventory" element={<Inventory />} />
     </Routes>
   )
 }

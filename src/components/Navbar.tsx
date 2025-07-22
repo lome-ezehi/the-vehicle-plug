@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,11 +15,11 @@ export default function Navbar() {
     }, []);
 
     const navItems = [
-        { name: 'Home', href: '#home' },
-        { name: 'Inventory', href: '#inventory' },
-        { name: 'Financing', href: '#financing' },
-        { name: 'Services', href: '#services' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'Home', to: '/' },
+        { name: 'Inventory', to: '/inventory' },
+        { name: 'Financing', to: '#financing' },
+        { name: 'Services', to: '#services' },
+        { name: 'Contact', to: '#contact' }
     ];
 
     return (
@@ -40,9 +41,9 @@ export default function Navbar() {
                 <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-8">
                     {navItems.map((item) => (
-                        <a
+                        <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.to}
                         className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                             isScrolled 
                             ? 'text-gray-700 hover:text-blue-600' 
@@ -50,7 +51,7 @@ export default function Navbar() {
                         }`}
                         >
                         {item.name}
-                        </a>
+                        </Link>
                     ))}
                     </div>
                 </div>
@@ -82,7 +83,7 @@ export default function Navbar() {
                     {navItems.map((item) => (
                         <a
                         key={item.name}
-                        href={item.href}
+                        href={item.to}
                         className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
                         onClick={() => setIsMenuOpen(false)}
                         >
